@@ -1,0 +1,25 @@
+<div
+  class="app-form-field"
+  [class.app-form-field--focused]="_focused"
+  [class.app-form-field--has-error]="_hasError"
+  (click)="focus()"
+>
+  @if (_hasFloatingLabel()) {
+    <label
+      class="app-form-field-label"
+      [class.app-form-field-label--floating]="_shouldLabelFloat"
+    >
+      <ng-content select="app-label"/>
+    </label>
+  }
+  <div
+    class="app-form-field-app-input-wrapper"
+    [class.app-form-field-app-input-wrapper--no-placeholder]="_hasFloatingLabel() && !_shouldLabelFloat"
+  >
+    <ng-content/>
+  </div>
+</div>
+
+<div class="app-form-field-error-wrapper">
+  <ng-content select="app-error"/>
+</div>

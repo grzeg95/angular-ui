@@ -1,0 +1,87 @@
+.app-form-field-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.app-form-field {
+
+  display: inline-flex;
+  flex-direction: column;
+  border-bottom: solid 1px #DEDEDE;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: #F8F5F5;
+  padding: 0 16px;
+  position: relative;
+  width: 180px;
+
+  &:hover:not(.app-form-field--focused) {
+    background: #ECECEC;
+  }
+
+  &--focused {
+    border-bottom: solid 1px #1A2536;
+    background: #E4E4E4;
+    outline: none;
+  }
+}
+
+.app-form-field-label {
+  position: absolute;
+  top: 18px;
+  font-size: 1rem;
+  transition: all 0.1s ease-out;
+  user-select: none;
+  color: #A3A3A3;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app-form-field-label--floating {
+  top: 5px;
+  font-size: 0.6875rem;
+  color: #1A2536
+}
+
+.app-form-field-app-input-wrapper {
+
+  padding: 24px 0 8px 0;
+
+  input {
+
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1rem;
+    color: #1A2536;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+
+    &::placeholder {
+      user-select: none;
+      color: #A3A3A3;
+      font-weight: normal;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+}
+
+.app-form-field-app-input-wrapper--no-placeholder {
+
+  input::placeholder {
+    color: transparent;
+  }
+}
+
+.app-form-field-error-wrapper {
+
+  padding: 0 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8125rem;
+  color: #F51512;
+  min-height: 25px;
+
+  app-error {
+    display: block;
+    margin-top: 5px;
+  }
+}
