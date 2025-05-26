@@ -7,7 +7,7 @@
 
   display: inline-flex;
   flex-direction: column;
-  border-bottom: solid 1px #DEDEDE;
+  box-shadow: 0 1px 0 0 #DEDEDE;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background: #F8F5F5;
@@ -15,14 +15,33 @@
   position: relative;
   width: 180px;
 
-  &:hover:not(.ui-form-field--focused) {
+  &:hover:not(.ui-form-field--focused):not(.ui-form-field--has-error) {
     background: #ECECEC;
+    box-shadow: 0 1px 0 0 #1A2536;
   }
 
-  &--focused {
-    border-bottom: solid 1px #1A2536;
+  &--focused:not(.ui-form-field--has-error) {
+    box-shadow: 0 1px 0 0 #1A2536;
     background: #E4E4E4;
     outline: none;
+  }
+
+  &--has-error {
+
+    box-shadow: 0 2px 0 0 #F51512;
+
+    .ui-form-field-label {
+      color: #F51512;
+    }
+  }
+
+  &--has-error:not(.ui-form-field--focused) {
+
+    box-shadow: 0 1px 0 0 #F51512;
+
+    .ui-form-field-label {
+      color: #F51512;
+    }
   }
 }
 
@@ -82,6 +101,6 @@
 
   ui-error {
     display: block;
-    margin-top: 5px;
+    margin-top: 6px;
   }
 }
