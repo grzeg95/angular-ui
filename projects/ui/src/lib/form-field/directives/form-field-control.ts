@@ -1,7 +1,7 @@
 import {Directive} from '@angular/core';
 
 @Directive()
-export abstract class AppFormFieldControl<T> {
+export abstract class UiFormFieldControl<T> {
 
   // @ts-ignore
   readonly ngControl: NgControl | null;

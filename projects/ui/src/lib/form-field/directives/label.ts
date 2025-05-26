@@ -2,7 +2,7 @@ import {Directive} from '@angular/core';
 
 @Directive({
   standalone: true,
-  selector: 'app-label'
+  selector: 'ui-label'
 })
-export class AppLabel {
+export class UiLabel {
 }

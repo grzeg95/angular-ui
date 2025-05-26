@@ -1,11 +1,11 @@
 import {Directive, ElementRef, inject} from '@angular/core';
 import {NgControl} from '@angular/forms';
-import {AppFormFieldControl} from './form-field-control';
+import {UiFormFieldControl} from './form-field-control';
 
 @Directive({
-  selector: '[appInput]',
+  selector: '[uiInput]',
   providers: [
-    {provide: AppFormFieldControl, useExisting: AppInput}
+    {provide: UiFormFieldControl, useExisting: UiInput}
   ],
   standalone: true,
   host: {
@@ -13,7 +13,7 @@ import {AppFormFieldControl} from './form-field-control';
     '(blur)': '_focusChanged(false)'
   }
 })
-export class AppInput implements AppFormFieldControl<any> {
+export class UiInput implements UiFormFieldControl<any> {
 
   protected _elementRef = inject<ElementRef<HTMLInputElement>>(ElementRef);
   private _isFocused = false;

@@ -1,7 +1,7 @@
-<app-form-field>
-  <app-label>Label</app-label>
-  <input appInput [formControl]="input" type="text" placeholder="Placeholder">
+<ui-form-field>
+  <ui-label>Label</ui-label>
+  <input uiInput [formControl]="input" type="text" placeholder="Placeholder">
   @if (input.errors?.['required'] && input.touched) {
-    <app-error>Input is required</app-error>
+    <ui-error>Input is required</ui-error>
   }
-</app-form-field>
+</ui-form-field>

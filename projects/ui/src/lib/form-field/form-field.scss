@@ -1,9 +1,9 @@
-.app-form-field-wrapper {
+.ui-form-field-wrapper {
   display: inline-flex;
   flex-direction: column;
 }
 
-.app-form-field {
+.ui-form-field {
 
   display: inline-flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   position: relative;
   width: 180px;
 
-  &:hover:not(.app-form-field--focused) {
+  &:hover:not(.ui-form-field--focused) {
     background: #ECECEC;
   }
 
@@ -26,7 +26,7 @@
   }
 }
 
-.app-form-field-label {
+.ui-form-field-label {
   position: absolute;
   top: 18px;
   font-size: 1rem;
@@ -36,13 +36,13 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.app-form-field-label--floating {
+.ui-form-field-label--floating {
   top: 5px;
   font-size: 0.6875rem;
   color: #1A2536
 }
 
-.app-form-field-app-input-wrapper {
+.ui-form-field-app-input-wrapper {
 
   padding: 24px 0 8px 0;
 
@@ -65,14 +65,14 @@
   }
 }
 
-.app-form-field-app-input-wrapper--no-placeholder {
+.ui-form-field-app-input-wrapper--no-placeholder {
 
   input::placeholder {
     color: transparent;
   }
 }
 
-.app-form-field-error-wrapper {
+.ui-form-field-error-wrapper {
 
   padding: 0 16px;
   font-family: 'Roboto', sans-serif;
@@ -80,7 +80,7 @@
   color: #F51512;
   min-height: 25px;
 
-  app-error {
+  ui-error {
     display: block;
     margin-top: 5px;
   }

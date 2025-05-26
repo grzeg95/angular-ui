@@ -1,20 +1,17 @@
 import {Component} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {Error} from './lib/form-field/directives/error';
-import {AppInput} from './lib/form-field/directives/input';
-import {AppLabel} from './lib/form-field/directives/label';
-import {AppFormField} from './lib/form-field/form-field';
+import {UiError, UiFormField, UiInput, UiLabel} from 'ui';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   imports: [
-    AppFormField,
-    AppLabel,
+    UiFormField,
+    UiLabel,
     FormsModule,
-    AppInput,
+    UiInput,
     ReactiveFormsModule,
-    Error
+    UiError
   ],
   styleUrl: './app.component.scss'
 })
