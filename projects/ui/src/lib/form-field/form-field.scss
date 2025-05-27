@@ -1,4 +1,4 @@
-@use 'index' as theme;
+@use 'index' as index;
 
 .ui-form-field-wrapper {
   display: inline-flex;
@@ -40,7 +40,7 @@
   transition: all 0.1s ease-out;
   user-select: none;
   font-family: 'Roboto', sans-serif;
-}`
+}
 
 .ui-form-field-label--floating {
   top: 5px;
@@ -111,10 +111,10 @@ ui-error {
   animation: error-message-animation 0.1s ease-out;
 }
 
-@include theme.theme ((
-  underline-line-color-default: #DEDEDE,
-  underline-line-color-hover: #DFEBFF,
-  underline-line-color-focused: #DFEBFF,
+@include index.theme ((
+  underline-line-color-default: #8E8E8E,
+  underline-line-color-hover: #1A2536,
+  underline-line-color-focused: #1A2536,
   underline-line-color-error: #F51512,
   label-color-default: #A3A3A3,
   label-color-floating: #1A2536,
@@ -122,7 +122,7 @@ ui-error {
   background-default: #F8F5F5,
   background-hover: #ECECEC,
   background-focused: #E4E4E4,
-  input-color: #1A2536,
+  input-color: #09090A,
   placeholder-color: #A3A3A3,
   error-color: #F51512
 ));
