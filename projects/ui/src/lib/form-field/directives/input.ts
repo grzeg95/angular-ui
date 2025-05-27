@@ -35,9 +35,15 @@ export class UiInput implements UiFormFieldControl<any> {
     return !!this.ngControl?.invalid && !!this.ngControl?.touched;
   }
 
+  get disabled() {
+    return !!this.ngControl?.disabled;
+  }
+
   focus() {
-    this._elementRef.nativeElement.focus();
-    this._focusChanged(true);
+    if (!this.disabled) {
+      this._elementRef.nativeElement.focus();
+      this._focusChanged(true);
+    }
   }
 
   protected _focusChanged(focus: boolean) {

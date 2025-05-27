@@ -10,6 +10,9 @@ export abstract class UiFormFieldControl<T> {
   readonly focused: boolean;
 
   // @ts-ignore
+  readonly disabled: boolean;
+
+  // @ts-ignore
   readonly hasError: boolean;
 
   // @ts-ignore

@@ -1,7 +1,17 @@
 <ui-form-field>
   <ui-label>Label</ui-label>
-  <input uiInput [formControl]="input" type="text" placeholder="Placeholder">
-  @if (input.errors?.['required'] && input.touched) {
+  <input uiInput [formControl]="sampleInput" type="text" placeholder="Placeholder">
+  @if (sampleInput.errors?.['required'] && sampleInput.touched) {
+    <ui-error>Input is required</ui-error>
+  }
+</ui-form-field>
+
+<p></p>
+
+<ui-form-field>
+  <ui-label>Label</ui-label>
+  <input uiInput [formControl]="sampleInputDisabled" type="text" placeholder="Placeholder">
+  @if (sampleInputDisabled.errors?.['required'] && sampleInputDisabled.touched) {
     <ui-error>Input is required</ui-error>
   }
 </ui-form-field>

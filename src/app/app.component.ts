@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {UiError, UiFormField, UiInput, UiLabel} from 'ui';
 
@@ -15,8 +15,12 @@ import {UiError, UiFormField, UiInput, UiLabel} from 'ui';
   ],
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  input = new FormControl('', [Validators.required]);
+  sampleInput = new FormControl('', [Validators.required]);
+  sampleInputDisabled = new FormControl('', [Validators.required]);
 
+  ngOnInit() {
+    this.sampleInputDisabled.disable();
+  }
 }
