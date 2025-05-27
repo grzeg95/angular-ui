@@ -40,7 +40,7 @@
   transition: all 0.1s ease-out;
   user-select: none;
   font-family: 'Roboto', sans-serif;
-}
+}`
 
 .ui-form-field-label--floating {
   top: 5px;
@@ -63,7 +63,6 @@
     &::placeholder {
       user-select: none;
       font-weight: normal;
-      font-family: 'Roboto', sans-serif;
     }
   }
 }
