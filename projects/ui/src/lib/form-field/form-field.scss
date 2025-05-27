@@ -1,24 +1,19 @@
+@use 'index' as theme;
+
 .ui-form-field-wrapper {
   display: inline-flex;
   flex-direction: column;
 }
 
-.ui-form-field {
+.ui-form-field{
 
   display: inline-flex;
   flex-direction: column;
-  box-shadow: 0 1px 0 0 #DEDEDE;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  background: #F8F5F5;
   padding: 0 16px;
   position: relative;
   width: 180px;
-
-  &:hover:not(.ui-form-field--focused):not(.ui-form-field--has-error) {
-    background: #ECECEC;
-    box-shadow: 0 1px 0 0 #1A2536;
-  }
 
   &--focused:not(.ui-form-field--has-error) {
     box-shadow: 0 1px 0 0 #1A2536;
@@ -51,14 +46,12 @@
   font-size: 1rem;
   transition: all 0.1s ease-out;
   user-select: none;
-  color: #A3A3A3;
   font-family: 'Roboto', sans-serif;
 }
 
 .ui-form-field-label--floating {
   top: 5px;
   font-size: 0.6875rem;
-  color: #1A2536
 }
 
 .ui-form-field-app-input-wrapper {
@@ -71,13 +64,10 @@
     outline: none;
     background: none;
     font-size: 1rem;
-    color: #1A2536;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
 
     &::placeholder {
       user-select: none;
-      color: #A3A3A3;
       font-weight: normal;
       font-family: 'Roboto', sans-serif;
     }
@@ -94,9 +84,7 @@
 .ui-form-field-error-wrapper {
 
   padding: 0 16px;
-  font-family: 'Roboto', sans-serif;
   font-size: 0.8125rem;
-  color: #F51512;
   min-height: 25px;
 
   ui-error {
@@ -104,3 +92,19 @@
     margin-top: 6px;
   }
 }
+
+@include theme.theme ((
+  bottom-line-color-default: #DEDEDE,
+  bottom-line-color-hover: #1A2536,
+  bottom-line-color-focused: #1A2536,
+  bottom-line-color-error: #F51512,
+  label-color-default: #A3A3A3,
+  label-color-floating: #1A2536,
+  label-color-error: #F51512,
+  background-default: #F8F5F5,
+  background-hover: #ECECEC,
+  background-focused: #E4E4E4,
+  input-color: #1A2536,
+  placeholder-color: #A3A3A3,
+  error-color: #F51512
+));

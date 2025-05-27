@@ -1,0 +1,87 @@
+@mixin theme($theme) {
+
+  $font-family: map-get($theme, 'font-family');
+  $bottom-line-color-default: map-get($theme, 'bottom-line-color-default');
+  $bottom-line-color-hover: map-get($theme, 'bottom-line-color-hover');
+  $bottom-line-color-focused: map-get($theme, 'bottom-line-color-focused');
+  $bottom-line-color-error: map-get($theme, 'bottom-line-color-error');
+  $label-color-default: map-get($theme, 'label-color-default');
+  $label-color-floating: map-get($theme, 'label-color-floating');
+  $label-color-error: map-get($theme, 'label-color-error');
+  $background-default: map-get($theme, 'background-default');
+  $background-hover: map-get($theme, 'background-hover');
+  $background-focused: map-get($theme, 'background-focused');
+  $input-color: map-get($theme, 'input-color');
+  $placeholder-color: map-get($theme, 'placeholder-color');
+  $error-color: map-get($theme, 'error-color');
+
+  .ui-form-field {
+
+    box-shadow: 0 1px 0 0 $bottom-line-color-default;
+    background: $background-default;
+
+    &:hover:not(.ui-form-field--focused) {
+      background: $background-hover;
+      box-shadow: 0 1px 0 0 $bottom-line-color-hover;
+    }
+
+    &.ui-form-field--has-error:not(.ui-form-field--focused) {
+      &:hover {
+        box-shadow: 0 1px 0 0 $bottom-line-color-error;
+      }
+    }
+
+    &--focused {
+      box-shadow: 0 1px 0 0 $bottom-line-color-focused;
+      background: $background-focused;
+    }
+
+    &--has-error {
+      box-shadow: 0 1px 0 0 $bottom-line-color-error;
+    }
+
+    &--has-error.ui-form-field--focused {
+
+      box-shadow: 0 2px 0 0 $bottom-line-color-error;
+
+      .ui-form-field-label {
+        color: $label-color-error;
+      }
+    }
+  }
+
+  .ui-form-field-label {
+    color: $label-color-default;
+    font-family: $font-family;
+  }
+
+  .ui-form-field-label--floating {
+    color: $label-color-floating;
+  }
+
+  .ui-form-field-app-input-wrapper {
+
+    input {
+
+      color: $input-color;
+      font-family: $font-family;
+
+      &::placeholder {
+        color: $placeholder-color;
+        font-family: $font-family;
+      }
+    }
+  }
+
+  .ui-form-field-app-input-wrapper--no-placeholder {
+
+    input::placeholder {
+      color: transparent!important;
+    }
+  }
+
+  .ui-form-field-error-wrapper {
+    font-family: $font-family;
+    color: $error-color;
+  }
+}
