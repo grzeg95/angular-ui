@@ -96,6 +96,21 @@
   }
 }
 
+@keyframes error-message-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ui-error {
+  animation: error-message-animation 0.1s ease-out;
+}
+
 @include theme.theme ((
   underline-line-color-default: #DEDEDE,
   underline-line-color-hover: #DFEBFF,
