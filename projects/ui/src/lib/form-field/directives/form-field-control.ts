@@ -7,14 +7,14 @@ export abstract class UiFormFieldControl<T> {
   readonly ngControl: NgControl | null;
 
   // @ts-ignore
-  focused: boolean;
+  readonly focused: boolean;
 
   // @ts-ignore
-  focus: () => void;
-
-  // @ts-ignore
-  hasError: boolean;
+  readonly hasError: boolean;
 
   // @ts-ignore
   readonly shouldLabelFloat: boolean;
+
+  // @ts-ignore
+  focus: () => void;
 }
