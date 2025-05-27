@@ -1,10 +1,10 @@
 @mixin theme($theme) {
 
   $font-family: map-get($theme, 'font-family');
-  $bottom-line-color-default: map-get($theme, 'bottom-line-color-default');
-  $bottom-line-color-hover: map-get($theme, 'bottom-line-color-hover');
-  $bottom-line-color-focused: map-get($theme, 'bottom-line-color-focused');
-  $bottom-line-color-error: map-get($theme, 'bottom-line-color-error');
+  $underline-line-color-default: map-get($theme, 'underline-line-color-default');
+  $underline-line-color-hover: map-get($theme, 'underline-line-color-hover');
+  $underline-line-color-focused: map-get($theme, 'underline-line-color-focused');
+  $underline-line-color-error: map-get($theme, 'underline-line-color-error');
   $label-color-default: map-get($theme, 'label-color-default');
   $label-color-floating: map-get($theme, 'label-color-floating');
   $label-color-error: map-get($theme, 'label-color-error');
@@ -17,32 +17,49 @@
 
   .ui-form-field {
 
-    box-shadow: 0 1px 0 0 $bottom-line-color-default;
+    .ui-form-field-underline {
+      background: $underline-line-color-default;
+    }
+
     background: $background-default;
 
     &:hover:not(.ui-form-field--focused) {
+
       background: $background-hover;
-      box-shadow: 0 1px 0 0 $bottom-line-color-hover;
+
+      .ui-form-field-underline {
+        background: $underline-line-color-hover;
+      }
     }
 
-    &.ui-form-field--has-error:not(.ui-form-field--focused) {
-      &:hover {
-        box-shadow: 0 1px 0 0 $bottom-line-color-error;
+    &.ui-form-field--has-error:not(.ui-form-field--focused):hover {
+      .ui-form-field-underline {
+        background: $underline-line-color-error;
       }
     }
 
     &--focused {
-      box-shadow: 0 1px 0 0 $bottom-line-color-focused;
+
       background: $background-focused;
+
+      .ui-form-field-underline {
+        height: 2px;
+        background: $underline-line-color-focused;
+      }
     }
 
     &--has-error {
-      box-shadow: 0 1px 0 0 $bottom-line-color-error;
+      .ui-form-field-underline {
+        background: $underline-line-color-error;
+      }
     }
 
     &--has-error.ui-form-field--focused {
 
-      box-shadow: 0 2px 0 0 $bottom-line-color-error;
+      .ui-form-field-underline {
+        height: 2px;
+        background: $underline-line-color-error;
+      }
 
       .ui-form-field-label {
         color: $label-color-error;
