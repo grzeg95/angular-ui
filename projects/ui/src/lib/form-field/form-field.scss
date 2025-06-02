@@ -19,7 +19,6 @@
   border-top-right-radius: 3px;
   padding: 0 16px;
   position: relative;
-  width: 180px;
 
   &--focused:not(.ui-form-field--has-error) {
     background: #E4E4E4;
@@ -72,6 +71,19 @@
       font-weight: normal;
     }
   }
+}
+
+.ui-form-field-flex {
+  display: inline-flex;
+  align-items: baseline;
+  width: 100%;
+}
+
+.ui-form-field-infix {
+  flex: auto;
+  min-width: 0;
+  width: 180px;
+  position: relative;
 }
 
 .ui-form-field-underline {

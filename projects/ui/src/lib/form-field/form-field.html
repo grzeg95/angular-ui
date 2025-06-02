@@ -17,7 +17,11 @@
     class="ui-form-field-app-input-wrapper"
     [class.ui-form-field-app-input-wrapper--no-placeholder]="_hasFloatingLabel() && !_shouldLabelFloat"
   >
-    <ng-content/>
+    <div class="ui-form-field-flex">
+      <div class="ui-form-field-infix">
+        <ng-content/>
+      </div>
+    </div>
   </div>
   <div class="ui-form-field-underline"></div>
 </div>
