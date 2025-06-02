@@ -21,6 +21,10 @@
   <div class="ui-form-field-underline"></div>
 </div>
 
-<div class="ui-form-field-error-wrapper">
-  <ng-content select="ui-error"/>
+<div class="ui-form-field-subscript-wrapper">
+  @if (_hasSubscript()) {
+    <div class="ui-form-field-subscript">
+      <ng-content select="ui-error, [uiError]"/>
+    </div>
+  }
 </div>

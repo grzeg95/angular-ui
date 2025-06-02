@@ -1,6 +1,6 @@
 import {Component, computed, contentChild, InjectionToken, input, ViewEncapsulation} from '@angular/core';
 import {UiFormFieldControl} from './directives/form-field-control';
-import {UiLabel} from './directives';
+import {UiError, UiLabel} from './directives';
 
 export const UI_FORM_FIELD = new InjectionToken<UiFormField>('UiFormField');
 
@@ -24,8 +24,10 @@ export class UiFormField {
 
   private readonly _labelChild = contentChild(UiLabel);
   private readonly _formFieldControl = contentChild(UiFormFieldControl);
+  private readonly _error = contentChild(UiError);
 
   protected _hasFloatingLabel = computed(() => !!this._labelChild());
+  protected _hasSubscript = computed(() => !!this._error());
 
   protected get _shouldLabelFloat() {
     return this._formFieldControl()?.shouldLabelFloat || this.floatLabel() === 'always';

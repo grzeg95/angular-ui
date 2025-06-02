@@ -90,19 +90,25 @@
   }
 }
 
-.ui-form-field-error-wrapper {
+.ui-form-field-subscript-wrapper {
 
-  padding: 0 16px;
+  position: relative;
   font-size: 0.8125rem;
   min-height: 25px;
 
-  ui-error {
+  .ui-form-field-subscript {
     display: block;
     margin-top: 5px;
+    padding: 0 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: subscript-animation 0.1s ease-out;
   }
 }
 
-@keyframes error-message-animation {
+@keyframes subscript-animation {
   from {
     opacity: 0;
     transform: translateY(-6px);
@@ -111,10 +117,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-ui-error {
-  animation: error-message-animation 0.1s ease-out;
 }
 
 @include index.theme ((
