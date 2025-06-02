@@ -1,13 +1,14 @@
 @mixin theme($theme) {
 
   $font-family: map-get($theme, 'font-family');
-  $underline-line-color-default: map-get($theme, 'underline-line-color-default');
-  $underline-line-color-hover: map-get($theme, 'underline-line-color-hover');
-  $underline-line-color-focused: map-get($theme, 'underline-line-color-focused');
-  $underline-line-color-error: map-get($theme, 'underline-line-color-error');
+  $underline-color-default: map-get($theme, 'underline-color-default');
+  $underline-color-hover: map-get($theme, 'underline-color-hover');
+  $underline-color-focused: map-get($theme, 'underline-color-focused');
+  $underline-color-error: map-get($theme, 'underline-color-error');
   $label-color-default: map-get($theme, 'label-color-default');
   $label-color-floating: map-get($theme, 'label-color-floating');
   $label-color-error: map-get($theme, 'label-color-error');
+  $label-background-floating: map-get($theme, 'label-background-floating');
   $background-default: map-get($theme, 'background-default');
   $background-hover: map-get($theme, 'background-hover');
   $background-focused: map-get($theme, 'background-focused');
@@ -15,26 +16,26 @@
   $placeholder-color: map-get($theme, 'placeholder-color');
   $error-color: map-get($theme, 'error-color');
 
-  .ui-form-field {
-
-    .ui-form-field-underline {
-      background: $underline-line-color-default;
-    }
+  .ui-form-field-text {
 
     background: $background-default;
 
-    &:hover:not(.ui-form-field--focused) {
+    .ui-form-field-underline {
+      background: $underline-color-default;
+    }
+
+    &:hover:not(.ui-form-field-text--focused) {
 
       background: $background-hover;
 
       .ui-form-field-underline {
-        background: $underline-line-color-hover;
+        background: $underline-color-hover;
       }
     }
 
-    &.ui-form-field--has-error:not(.ui-form-field--focused):hover {
+    &.ui-form-field-text--has-error:not(.ui-form-field-text--focused):hover {
       .ui-form-field-underline {
-        background: $underline-line-color-error;
+        background: $underline-color-error;
       }
     }
 
@@ -44,21 +45,26 @@
 
       .ui-form-field-underline {
         height: 2px;
-        background: $underline-line-color-focused;
+        background: $underline-color-focused;
       }
     }
 
     &--has-error {
+
       .ui-form-field-underline {
-        background: $underline-line-color-error;
+        background: $underline-color-error;
+      }
+
+      .ui-form-field-label {
+        color: $label-color-error;
       }
     }
 
-    &--has-error.ui-form-field--focused {
+    &--has-error.ui-form-field-text--focused {
 
       .ui-form-field-underline {
         height: 2px;
-        background: $underline-line-color-error;
+        background: $underline-color-error;
       }
 
       .ui-form-field-label {
@@ -67,16 +73,22 @@
     }
   }
 
+  .ui-form-field-underline {
+    background: $underline-color-default;
+  }
+
   .ui-form-field-label {
+
     color: $label-color-default;
     font-family: $font-family;
+
+    &--floating {
+      color: $label-color-floating;
+      background: $label-background-floating;
+    }
   }
 
-  .ui-form-field-label--floating {
-    color: $label-color-floating;
-  }
-
-  .ui-form-field-app-input-wrapper {
+  .ui-form-field-input-wrapper {
 
     input {
 
@@ -88,17 +100,20 @@
         font-family: $font-family;
       }
     }
-  }
 
-  .ui-form-field-app-input-wrapper--no-placeholder {
-
-    input::placeholder {
-      color: transparent!important;
+    &--no-placeholder {
+      input::placeholder {
+        color: transparent !important
+      }
     }
   }
 
-  .ui-form-field-error-wrapper {
+  .ui-form-field-subscript {
+
     font-family: $font-family;
-    color: $error-color;
+
+    ui-error {
+      color: $error-color;
+    }
   }
 }

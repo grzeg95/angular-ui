@@ -1,61 +1,53 @@
-@use 'index' as index;
-
-.ui-form-field-wrapper {
-  display: inline-flex;
-  flex-direction: column;
-}
-
-.ui-form-field--disabled {
-  user-select: none;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
 .ui-form-field {
 
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 10px;
+
+  &--disabled {
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+}
+
+.ui-form-field-text {
   display: inline-flex;
   flex-direction: column;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   padding: 0 16px;
   position: relative;
-
-  &--focused:not(.ui-form-field--has-error) {
-    background: #E4E4E4;
-    outline: none;
-  }
-
-  &--has-error {
-    .ui-form-field-label {
-      color: #F51512;
-    }
-  }
-
-  &--has-error:not(.ui-form-field--focused) {
-    .ui-form-field-label {
-      color: #F51512;
-    }
-  }
 }
 
 .ui-form-field-label {
+
   position: absolute;
-  top: 18px;
+  top: 9px;
   font-size: 1rem;
   transition: all 0.1s ease-out;
   user-select: none;
-  font-family: 'Roboto', sans-serif;
+
+  &--floating {
+    top: -10px;
+    font-size: 0.6875rem;
+    line-height: 15px;
+    border-radius: 3px;
+    padding: 0 1px;
+  }
 }
 
-.ui-form-field-label--floating {
-  top: 5px;
-  font-size: 0.6875rem;
-}
+.ui-form-field-input-wrapper {
 
-.ui-form-field-app-input-wrapper {
-
-  padding: 24px 0 8px 0;
+  padding: 11px 0 5px 0;
   position: relative;
+
+  &--no-placeholder {
+
+    input::placeholder {
+      color: transparent;
+    }
+  }
 
   input {
 
@@ -95,13 +87,6 @@
   transition: all 0.1s ease-out;
 }
 
-.ui-form-field-app-input-wrapper--no-placeholder {
-
-  input::placeholder {
-    color: transparent;
-  }
-}
-
 .ui-form-field-subscript-wrapper {
 
   position: relative;
@@ -130,19 +115,3 @@
     transform: translateY(0);
   }
 }
-
-@include index.theme ((
-  underline-line-color-default: #8E8E8E,
-  underline-line-color-hover: #1A2536,
-  underline-line-color-focused: #1A2536,
-  underline-line-color-error: #F51512,
-  label-color-default: #A3A3A3,
-  label-color-floating: #1A2536,
-  label-color-error: #F51512,
-  background-default: #F8F5F5,
-  background-hover: #ECECEC,
-  background-focused: #E4E4E4,
-  input-color: #09090A,
-  placeholder-color: #A3A3A3,
-  error-color: #F51512
-));

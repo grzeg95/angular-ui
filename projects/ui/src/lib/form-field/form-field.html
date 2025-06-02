@@ -1,8 +1,8 @@
 <div
-  class="ui-form-field"
-  [class.ui-form-field--disabled]="_disabled"
-  [class.ui-form-field--focused]="_focused"
-  [class.ui-form-field--has-error]="_hasError"
+  class="ui-form-field-text"
+
+  [class.ui-form-field-text--focused]="_focused"
+  [class.ui-form-field-text--has-error]="_hasError"
   (click)="_focus()"
 >
   @if (_hasFloatingLabel()) {
@@ -14,8 +14,8 @@
     </label>
   }
   <div
-    class="ui-form-field-app-input-wrapper"
-    [class.ui-form-field-app-input-wrapper--no-placeholder]="_hasFloatingLabel() && !_shouldLabelFloat"
+    class="ui-form-field-input-wrapper"
+    [class.ui-form-field-input-wrapper--no-placeholder]="_hasFloatingLabel() && !_shouldLabelFloat"
   >
     <div class="ui-form-field-flex">
       <div class="ui-form-field-infix">

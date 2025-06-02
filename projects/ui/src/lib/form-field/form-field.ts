@@ -11,8 +11,8 @@ export const UI_FORM_FIELD = new InjectionToken<UiFormField>('UiFormField');
   standalone: true,
   encapsulation: ViewEncapsulation.None,
   host: {
-    'class': 'ui-form-field-wrapper',
-    '[class.ui-form-field-wrapper--disabled]': '_disabled'
+    'class': 'ui-form-field',
+    '[class.ui-form-field--disabled]': '_disabled'
   },
   providers: [
     {provide: UI_FORM_FIELD, useExisting: UiFormField}
