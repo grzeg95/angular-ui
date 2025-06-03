@@ -13,6 +13,7 @@ body {
 }
 
 @include form-field.theme ((
+  font-family: $font-family,
   underline-color-default: #8E8E8E,
   underline-color-hover: #1A2536,
   underline-color-focused: #1A2536,
