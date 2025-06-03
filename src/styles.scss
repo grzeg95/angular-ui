@@ -1,4 +1,6 @@
 @use 'ui/styles/form-field' as form-field;
+@use 'ui/styles/autocomplete' as autocomplete;
+@use 'ui/styles/core/option' as option;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -28,4 +30,15 @@ body {
   input-color: #09090A,
   placeholder-color: #A3A3A3,
   error-color: #F51512
+));
+
+@include autocomplete.theme((
+  font-family: $font-family,
+  background-color-default: #FFFFFF
+));
+
+@include option.theme((
+  font-family: $font-family,
+  background-color-default: #FFFFFF,
+  background-color-hover: #ECECEC
 ));

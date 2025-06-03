@@ -15,3 +15,18 @@
     <ui-error>Input is required</ui-error>
   }
 </ui-form-field>
+
+<p></p>
+
+<ui-form-field>
+  <ui-label>Times of day</ui-label>
+  <input autocomplete="off"
+         [formControl]="sampleInputAutocomplete"
+         uiInput
+         [uiAutocomplete]="auto">
+  <ui-autocomplete #auto="uiAutocomplete" (optionSelected)="handleOptionSelected($event)">
+    @for (option of _filteredOptions$ | async; track option) {
+      <ui-option [value]="option">{{ option }}</ui-option>
+    }
+  </ui-autocomplete>
+</ui-form-field>
